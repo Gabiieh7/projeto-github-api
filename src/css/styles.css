@@ -15,6 +15,7 @@ body {
   font-family: "Kumbh Sans", sans-serif;  
   text-align: center;    
   padding-bottom: 100px;
+  color: rgb(73, 23, 120);
 }
 
 main {
@@ -35,8 +36,8 @@ main {
 }
 
 .container {
-  width: 60%; /* se for uma tela menor que 980px vai se adaptar a 70% */
-  max-width: 960px; /* quando chegar em 980px para de aumentar */
+  width: 60%;
+  max-width: 960px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
   background-color: #fff;
   display: flex;
@@ -56,8 +57,9 @@ main {
 
 .container header h2 {
   font-size: 20px;
-  font-weight: 700;
   margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .container header #input-search {
@@ -66,9 +68,12 @@ main {
   margin: 0 auto;
   padding: 10px;
   border-radius: 7px;
-  border: 1px solid grey;
+  border: 1px solid rgb(73, 23, 120);
+  color:  rgb(73, 23, 120);
 }
-
+.container header #input-search::placeholder{
+  color: rgba(73, 23, 120, 0.658) ;
+}
 .container header #btn-search {
   width: 200px;
   font-size: 17px;
@@ -76,11 +81,15 @@ main {
   padding: 10px;
   border-radius: 7px;  
   cursor: pointer;
-  border: 1px solid grey;
+  border: 2px solid rgb(73, 23, 120);
+  color: rgb(73, 23, 120);
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .container header #btn-search:hover {
-  background-color: hotpink;
+  background-color: rgb(73, 23, 120);
   color: #ffffff;
   border-color: #ffffff;
 }
@@ -106,26 +115,28 @@ main {
 .container .profile-data .info img{
   width: 50%;
   border-radius: 50%;
-  border: 10px solid hotpink;
+  border: 10px solid rgb(73, 23, 120);
 }
 
 .container .profile-data .info h1{
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .container .profile-data .info p{
-  font-size: 15px;  
+  font-size: 18px;  
   font-weight: 400;
   line-height: 23px;
 }
 
-/* REPOSITORIES */
-
-.container .profile-data .repositories h2{
+.container .profile-data .repositories h2,
+.container .profile-data .events h2{
   margin-bottom: 30px;
   text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .container .profile-data .repositories ul{
@@ -136,20 +147,64 @@ main {
 
 .container .profile-data .repositories ul li a{
   padding: 20px;
-  border: 1px solid grey;  
+  border: 1px solid rgb(73, 23, 120);  
   margin: 20px;
   display: block;
   border-radius: 7px;
+  font-weight: bold;
+  font-size: 20px;
   transition: 0.3s ease-in-out;
 }
 
+.container .profile-data .events ul li{
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  gap: 30px;
+  justify-content: center;
+  margin: 10px 0;
+}
+.container .profile-data .events ul li:hover h3,
+.container .profile-data .events ul li:hover p{
+  font-weight: bold;
+}
+.info-repositories{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+  font-size: 15px;
+}
+.info-repositories p{
+  padding: 5px 7px;
+  border-radius: 7px;
+  background-color: rgb(73, 23, 120);
+  color: white;
+}
 .container .profile-data .repositories ul li a:hover{
-  background-color:hotpink;
+  background-color:rgb(73, 23, 120);
   color: #fff
 }
 
 .container .profile-data.hide{
   display: none;
+}
+.follow{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center; 
+}
+.follow p{
+  padding: 7px 10px;
+}
+.follow .followers{
+  background-color: rgb(73, 23, 120);
+  color: white;
+  border-radius: 7px 0 0 7px;
+}
+.follow .following{
+  border: 2px solid  rgb(73, 23, 120);
+  border-radius: 0 7px 7px 0;
 }
 
 @media (max-width: 1280px) {
@@ -175,9 +230,6 @@ main {
   {
     width: 100%;
   }
-}
-
-@media (max-width: 425px) {
   main {
     padding: 15% 0;    
   }
